@@ -5,7 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmaslowski</groupId>
-    <artifactId>ejb-service</artifactId>
+    <artifactId>ejb-interceptors</artifactId>
+    <name>1Z0-895 Exam: Interceptors</name>
 
     <parent>
         <groupId>com.gmaslowski</groupId>

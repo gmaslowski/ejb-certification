@@ -7,6 +7,7 @@
     <groupId>com.gmaslowski</groupId>
     <artifactId>ejb-certification</artifactId>
     <version>0.1-SNAPSHOT</version>
+    <name>1Z0-895 Exam Parent Helper Projects</name>
     <packaging>pom</packaging>
 
 
@@ -20,11 +21,13 @@
 
         <!-- JEE -->
         <javaee-api.version>6.0</javaee-api.version>
+        <slf4j-api.version>1.5.11</slf4j-api.version>
+        <logback-classic.version>0.9.18</logback-classic.version>
     </properties>
 
     <modules>
-        <module>ejb-service</module>
-        <module>ejb-client</module>
+        <module>ejb-security</module>
+        <module>ejb-interceptors</module>
     </modules>
 
     <dependencyManagement>
@@ -52,6 +55,18 @@
                 <artifactId>fest-assert</artifactId>
                 <scope>test</scope>
                 <version>${org.easytesting.fest-assert.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback-classic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
