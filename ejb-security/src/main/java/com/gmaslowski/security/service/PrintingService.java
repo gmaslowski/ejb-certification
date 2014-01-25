@@ -2,6 +2,6 @@ package com.gmaslowski.security.service;
 
 public interface PrintingService {
 
-    void logRole();
+    void logRoleInformation();
 
 }
