@@ -1,6 +1,6 @@
 package com.gmaslowski.security.service.impl;
 
-import com.gmaslowski.security.service.PrintingService;
+import com.gmaslowski.security.service.SecuredService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,15 +14,15 @@ import static com.gmaslowski.security.role.SecurityRoles.ADMIN_ROLE;
 @Stateless
 @DeclareRoles(ADMIN_ROLE)
 @RolesAllowed(ADMIN_ROLE)
-public class AdminRoleRequiredPrintingService implements PrintingService {
+public class AdminRoleRequiredSecuredService implements SecuredService {
 
-    private final static Logger log = LoggerFactory.getLogger(AdminRoleRequiredPrintingService.class);
+    private final static Logger log = LoggerFactory.getLogger(AdminRoleRequiredSecuredService.class);
 
-    @EJB(beanName = "PrintingServiceImpl")
-    private PrintingService printingService;
+    @EJB(beanName = "SecuredServiceImpl")
+    private SecuredService securedService;
 
     @Override
     public void logRoleInformation() {
-        printingService.logRoleInformation();
+        securedService.logRoleInformation();
     }
 }

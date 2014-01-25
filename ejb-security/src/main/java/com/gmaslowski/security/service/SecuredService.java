@@ -1,6 +1,6 @@
 package com.gmaslowski.security.service;
 
-public interface PrintingService {
+public interface SecuredService {
 
     void logRoleInformation();
 

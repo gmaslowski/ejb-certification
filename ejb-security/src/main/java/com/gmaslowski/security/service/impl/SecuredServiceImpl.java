@@ -1,6 +1,6 @@
 package com.gmaslowski.security.service.impl;
 
-import com.gmaslowski.security.service.PrintingService;
+import com.gmaslowski.security.service.SecuredService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -10,12 +10,13 @@ import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 
 import static com.gmaslowski.security.role.SecurityRoles.ADMIN_ROLE;
+import static com.gmaslowski.security.role.SecurityRoles.ALL_ROLES;
 
 @Stateless
 @DeclareRoles(ADMIN_ROLE)
-public class PrintingServiceImpl implements PrintingService {
+public class SecuredServiceImpl implements SecuredService {
 
-    private final static Logger log = LoggerFactory.getLogger(PrintingServiceImpl.class);
+    private final static Logger log = LoggerFactory.getLogger(SecuredServiceImpl.class);
 
     @Resource
     protected SessionContext ejbContext;
@@ -23,6 +24,9 @@ public class PrintingServiceImpl implements PrintingService {
     @Override
     public void logRoleInformation() {
         log.info("principal name - {}", ejbContext.getCallerPrincipal().getName());
-        log.info("is caller in role ADMIN - {}", ejbContext.isCallerInRole(ADMIN_ROLE));
+
+        for (String role : ALL_ROLES) {
+            log.info("is caller in role {} - {}", role, ejbContext.isCallerInRole(role));
+        }
     }
 }
