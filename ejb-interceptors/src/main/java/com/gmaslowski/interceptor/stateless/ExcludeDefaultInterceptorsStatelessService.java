@@ -20,6 +20,7 @@ public class ExcludeDefaultInterceptorsStatelessService implements Loggable {
 
     @Override
     public void logMe(String message) {
+        // order: class, method interceptors
         log.info(message);
     }
 }

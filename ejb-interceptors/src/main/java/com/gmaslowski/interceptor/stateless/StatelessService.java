@@ -33,6 +33,7 @@ public class StatelessService implements Loggable {
 
     @Interceptors({StatelessServiceFirstMethodInterceptor.class, StatelessServiceSecondMethodInterceptor.class})
     public void logMe(String value) {
+        // order: default, class, method interceptors
         log.info(value);
     }
 }
