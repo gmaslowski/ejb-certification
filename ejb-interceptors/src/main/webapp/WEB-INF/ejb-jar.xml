@@ -1,7 +1,7 @@
 <ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
-         version="3.0">
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
+         version="3.1">
 
     <assembly-descriptor>
         <!-- below is dangerous - if not narrowed it will catch every ejb call -->
@@ -13,6 +13,22 @@
                 com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceDefaultInterceptor
             </interceptor-class>
         </interceptor-binding>
+
+        <interceptor-binding>
+            <ejb-name>InterceptorOrderChangedService</ejb-name>
+            <method>
+                <method-name>logMeWithChangedOrder</method-name>
+            </method>
+
+            <interceptor-order>
+                <interceptor-class>com.gmaslowski.interceptor.order.interceptor.SecondInterceptor</interceptor-class>
+                <interceptor-class>com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceDefaultInterceptor</interceptor-class>
+                <interceptor-class>com.gmaslowski.interceptor.order.interceptor.ThirdInterceptor</interceptor-class>
+                <interceptor-class>com.gmaslowski.interceptor.order.interceptor.FirstInterceptor</interceptor-class>
+            </interceptor-order>
+
+        </interceptor-binding>
+
     </assembly-descriptor>
 
 </ejb-jar>
