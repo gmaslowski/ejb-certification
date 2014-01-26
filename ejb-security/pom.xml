@@ -9,11 +9,6 @@
     <name>1Z0-895 Exam: Security</name>
     <packaging>war</packaging>
 
-    <properties>
-        <tomee-maven-plugin.version>1.6.0</tomee-maven-plugin.version>
-        <tomee-maven-plugin.tomeeVersion>1.6.0</tomee-maven-plugin.tomeeVersion>
-    </properties>
-
     <parent>
         <groupId>com.gmaslowski</groupId>
         <artifactId>ejb-certification</artifactId>
@@ -59,12 +54,6 @@
             <plugin>
                 <groupId>org.apache.openejb.maven</groupId>
                 <artifactId>tomee-maven-plugin</artifactId>
-                <version>${tomee-maven-plugin.version}</version>
-                <configuration>
-                    <tomeeVersion>${tomee-maven-plugin.tomeeVersion}</tomeeVersion>
-                    <tomeeClassifier>plus</tomeeClassifier>
-                    <context>${project.artifactId}</context>
-                </configuration>
             </plugin>
         </plugins>
     </build>
