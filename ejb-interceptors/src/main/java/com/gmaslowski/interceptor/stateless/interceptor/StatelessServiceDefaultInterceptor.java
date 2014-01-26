@@ -13,9 +13,9 @@ import static javax.enterprise.inject.spi.InterceptionType.AROUND_INVOKE;
 import static javax.enterprise.inject.spi.InterceptionType.POST_CONSTRUCT;
 import static javax.enterprise.inject.spi.InterceptionType.PRE_DESTROY;
 
-public class ServiceDefaultInterceptor implements ServiceInterceptor {
+public class StatelessServiceDefaultInterceptor implements StatelessServiceInterceptor {
 
-    private static final Logger log = LoggerFactory.getLogger(ServiceDefaultInterceptor.class);
+    private static final Logger log = LoggerFactory.getLogger(StatelessServiceDefaultInterceptor.class);
 
     @PostConstruct
     @Override

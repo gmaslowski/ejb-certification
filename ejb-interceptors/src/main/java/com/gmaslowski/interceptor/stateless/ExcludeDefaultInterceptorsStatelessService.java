@@ -1,5 +1,6 @@
 package com.gmaslowski.interceptor.stateless;
 
+import com.gmaslowski.interceptor.Loggable;
 import com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceChangingParameterClassInterceptor;
 import com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceClassInterceptor;
 import org.slf4j.Logger;

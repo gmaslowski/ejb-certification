@@ -10,7 +10,7 @@
         <interceptor-binding>
             <ejb-name>*</ejb-name>
             <interceptor-class>
-                com.gmaslowski.interceptor.stateless.interceptor.ServiceDefaultInterceptor
+                com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceDefaultInterceptor
             </interceptor-class>
         </interceptor-binding>
     </assembly-descriptor>

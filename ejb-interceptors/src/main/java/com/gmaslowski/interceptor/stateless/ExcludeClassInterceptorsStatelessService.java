@@ -1,5 +1,6 @@
 package com.gmaslowski.interceptor.stateless;
 
+import com.gmaslowski.interceptor.Loggable;
 import com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceClassInterceptor;
 import com.gmaslowski.interceptor.stateless.interceptor.StatelessServiceFirstMethodInterceptor;
 import org.slf4j.Logger;

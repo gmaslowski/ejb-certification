@@ -11,7 +11,7 @@ import javax.interceptor.InvocationContext;
 import static javax.enterprise.inject.spi.InterceptionType.POST_CONSTRUCT;
 
 @Interceptor
-public class StatelessServiceChangingParameterClassInterceptor implements ServiceInterceptor {
+public class StatelessServiceChangingParameterClassInterceptor implements StatelessServiceInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(StatelessServiceChangingParameterClassInterceptor.class);
 

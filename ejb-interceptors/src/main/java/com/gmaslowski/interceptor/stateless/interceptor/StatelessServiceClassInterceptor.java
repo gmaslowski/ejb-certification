@@ -14,7 +14,7 @@ import static javax.enterprise.inject.spi.InterceptionType.POST_CONSTRUCT;
 import static javax.enterprise.inject.spi.InterceptionType.PRE_DESTROY;
 
 @Interceptor
-public class StatelessServiceClassInterceptor implements ServiceInterceptor {
+public class StatelessServiceClassInterceptor implements StatelessServiceInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(StatelessServiceClassInterceptor.class);
 

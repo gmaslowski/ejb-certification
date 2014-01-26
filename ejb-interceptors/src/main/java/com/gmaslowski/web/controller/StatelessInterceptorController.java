@@ -1,14 +1,17 @@
 package com.gmaslowski.web.controller;
 
-import com.gmaslowski.interceptor.stateless.Loggable;
+
+import com.gmaslowski.interceptor.Loggable;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.interceptor.ExcludeDefaultInterceptors;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 
-@Path("/interceptor")
 @Stateless
+@Path("/stateless")
+@ExcludeDefaultInterceptors
 public class StatelessInterceptorController {
 
     @EJB(beanName = "StatelessService")
@@ -21,7 +24,6 @@ public class StatelessInterceptorController {
     private Loggable excludeClassInterceptorsStatelessService;
 
     @POST
-    @Path("/stateless")
     public String intercept(String value) {
         statelessService.logMe(value);
         excludeDefaultInterceptorsStatelessService.logMe(value);

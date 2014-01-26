@@ -10,7 +10,7 @@ import javax.interceptor.InvocationContext;
 import static javax.enterprise.inject.spi.InterceptionType.AROUND_INVOKE;
 
 @Interceptor
-public class StatelessServiceFirstMethodInterceptor implements ServiceInterceptor {
+public class StatelessServiceFirstMethodInterceptor implements StatelessServiceInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(StatelessServiceFirstMethodInterceptor.class);
 

@@ -2,7 +2,7 @@ package com.gmaslowski.interceptor.stateless.interceptor;
 
 import javax.interceptor.InvocationContext;
 
-public interface ServiceInterceptor {
+public interface StatelessServiceInterceptor {
 
     void postConstructIntercept(InvocationContext invocationContext) throws Exception;
 

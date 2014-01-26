@@ -1,4 +1,4 @@
-package com.gmaslowski.interceptor.stateless;
+package com.gmaslowski.interceptor;
 
 public interface Loggable {
 
