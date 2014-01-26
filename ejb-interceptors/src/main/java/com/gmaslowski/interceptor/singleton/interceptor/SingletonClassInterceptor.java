@@ -12,7 +12,7 @@ import static javax.enterprise.inject.spi.InterceptionType.AROUND_INVOKE;
 import static javax.enterprise.inject.spi.InterceptionType.POST_CONSTRUCT;
 
 @Interceptor
-public class SingletonClassInterceptor implements SingletonInterceptor {
+public class SingletonClassInterceptor extends SingletonClassInterceptorSuperclassInterceptor {
 
     private static final Logger log = LoggerFactory.getLogger(SingletonClassInterceptor.class);
 
@@ -25,8 +25,9 @@ public class SingletonClassInterceptor implements SingletonInterceptor {
 
     @PostConstruct
     @Override
-    public void postConstructInterceptor(InvocationContext invocationContext) {
+    public void postConstructInterceptor(InvocationContext invocationContext) throws Exception {
         log.info(POST_CONSTRUCT.toString() + ", notice when I'm being invoked.");
+        invocationContext.proceed();
     }
 
     @Override

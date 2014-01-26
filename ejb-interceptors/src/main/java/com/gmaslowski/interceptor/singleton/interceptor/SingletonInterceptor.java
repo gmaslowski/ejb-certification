@@ -6,7 +6,7 @@ public interface SingletonInterceptor {
 
     Object aroundInvokeInterceptor(InvocationContext invocationContext) throws Exception;
 
-    void postConstructInterceptor(InvocationContext invocationContext);
+    void postConstructInterceptor(InvocationContext invocationContext) throws Exception;
 
     void preDestroyInterceptor(InvocationContext invocationContext);
 }

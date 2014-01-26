@@ -6,9 +6,9 @@ import javax.interceptor.InvocationContext;
 
 public interface StatefulServiceInterceptor extends StatelessServiceInterceptor {
 
-    void postActivateIntercept(InvocationContext invocationContext);
+    void postActivateIntercept(InvocationContext invocationContext) throws Exception;
 
-    void prePassivateIntercept(InvocationContext invocationContext);
+    void prePassivateIntercept(InvocationContext invocationContext) throws Exception;
 
 
 }

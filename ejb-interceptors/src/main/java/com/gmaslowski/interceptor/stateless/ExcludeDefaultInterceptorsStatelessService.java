@@ -13,7 +13,6 @@ import javax.interceptor.Interceptors;
 @Stateless
 @ExcludeDefaultInterceptors
 @Interceptors({StatelessServiceClassInterceptor.class, StatelessServiceChangingParameterClassInterceptor.class})
-// remember that only one (the first declared) interceptor is going to serve as lifecycle callback interceptor !!
 public class ExcludeDefaultInterceptorsStatelessService implements Loggable {
 
     private static final Logger log = LoggerFactory.getLogger(ExcludeDefaultInterceptorsStatelessService.class);

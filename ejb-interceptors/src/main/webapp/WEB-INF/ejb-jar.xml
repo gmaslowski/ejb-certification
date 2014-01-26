@@ -6,7 +6,6 @@
     <assembly-descriptor>
         <!-- below is dangerous - if not narrowed it will catch every ejb call -->
         <!-- if it also intercepts lifecycle callbacks, than those will be caught as well !! -->
-        <!-- remember that only ONE !! lifecycle callback is allowed -->
         <interceptor-binding>
             <ejb-name>*</ejb-name>
             <interceptor-class>
