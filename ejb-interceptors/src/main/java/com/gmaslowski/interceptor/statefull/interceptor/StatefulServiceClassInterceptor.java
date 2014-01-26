@@ -24,26 +24,30 @@ public class StatefulServiceClassInterceptor implements StatefulServiceIntercept
 
     @PostActivate
     @Override
-    public void postActivateIntercept(InvocationContext invocationContext) {
+    public void postActivateIntercept(InvocationContext invocationContext) throws Exception {
         log.info(POST_ACTIVATE.toString() + " on " + invocationContext.getTarget().getClass());
+        invocationContext.proceed();
     }
 
     @PrePassivate
     @Override
-    public void prePassivateIntercept(InvocationContext invocationContext) {
+    public void prePassivateIntercept(InvocationContext invocationContext) throws Exception {
         log.info(PRE_PASSIVATE.toString() + " on " + invocationContext.getTarget().getClass());
+        invocationContext.proceed();
     }
 
     @PostConstruct
     @Override
-    public void postConstructIntercept(InvocationContext invocationContext) {
+    public void postConstructIntercept(InvocationContext invocationContext) throws Exception {
         log.info(POST_CONSTRUCT.toString() + " on " + invocationContext.getTarget().getClass());
+        invocationContext.proceed();
     }
 
     @PreDestroy
     @Override
-    public void preDestroyIntercept(InvocationContext invocationContext) {
+    public void preDestroyIntercept(InvocationContext invocationContext) throws Exception {
         log.info(PRE_DESTROY.toString() + " on " + invocationContext.getTarget().getClass());
+        invocationContext.proceed();
     }
 
     @AroundInvoke

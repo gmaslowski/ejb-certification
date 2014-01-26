@@ -19,14 +19,16 @@ public class StatelessServiceDefaultInterceptor implements StatelessServiceInter
 
     @PostConstruct
     @Override
-    public void postConstructIntercept(InvocationContext invocationContext) {
+    public void postConstructIntercept(InvocationContext invocationContext) throws Exception {
         log.info(POST_CONSTRUCT.toString() + " on " + invocationContext.getTarget().getClass());
+        invocationContext.proceed();
     }
 
     @PreDestroy
     @Override
-    public void preDestroyIntercept(InvocationContext invocationContext) {
+    public void preDestroyIntercept(InvocationContext invocationContext) throws Exception {
         log.info(PRE_DESTROY.toString());
+        invocationContext.proceed();
     }
 
     @AroundInvoke
