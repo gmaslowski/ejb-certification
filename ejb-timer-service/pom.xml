@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gmaslowski</groupId>
-    <artifactId>ejb-security</artifactId>
-    <name>1Z0-895 Exam: Security</name>
+    <artifactId>ejb-timer-service</artifactId>
+    <name>1Z0-895 Exam: Timer Service</name>
     <packaging>war</packaging>
 
     <parent>
@@ -37,6 +37,10 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

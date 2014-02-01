@@ -33,9 +33,11 @@
         <!-- tomEE -->
         <tomee-maven-plugin.version>1.6.0</tomee-maven-plugin.version>
         <tomee-maven-plugin.tomeeVersion>1.6.0</tomee-maven-plugin.tomeeVersion>
+        <joda-time.version>2.3</joda-time.version>
     </properties>
 
     <modules>
+        <module>ejb-timer-service</module>
         <module>ejb-security</module>
         <module>ejb-interceptors</module>
     </modules>
@@ -77,6 +79,12 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback-classic.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
