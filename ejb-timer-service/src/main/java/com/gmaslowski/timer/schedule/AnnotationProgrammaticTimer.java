@@ -14,6 +14,20 @@ import java.util.Date;
 @Stateless
 public class AnnotationProgrammaticTimer {
 
+    // TODO: transaction demarcation?
+    // if rollback then creation and cancellation of timer is rolled back
+
+    // TODO: what about security?
+    // no security, ctx.getPrincipal() will return ANONYMOUS
+
+    // TODO: thrown Exceptions?
+    // IllegalStateException - if date is in minus, interval has a negative value
+    // IllegalArgumentException
+    // EJBException
+
+    // TODO: do beans get invalidated on timer creation errors?
+    // don't know yet, possibly yes if programmatic timer creation and EJBException is thrown
+
     private static final Logger log = LoggerFactory.getLogger(AnnotationProgrammaticTimer.class);
 
     @Resource
