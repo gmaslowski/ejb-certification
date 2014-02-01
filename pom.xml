@@ -37,6 +37,7 @@
     </properties>
 
     <modules>
+        <module>ejb-views</module>
         <module>ejb-timer-service</module>
         <module>ejb-security</module>
         <module>ejb-interceptors</module>
