@@ -38,6 +38,7 @@
 
     <modules>
         <module>ejb-singleton</module>
+		<module>ejb-session-equality</module>
         <module>ejb-views</module>
         <module>ejb-timer-service</module>
         <module>ejb-security</module>
