@@ -37,11 +37,13 @@
     </properties>
 
     <modules>
+        <module>ejb-helper</module>
         <module>ejb-singleton</module>
-		<module>ejb-stateless</module>
-		<module>ejb-stateful</module>
-		<module>ejb-session-equality</module>
+        <module>ejb-stateless</module>
+        <module>ejb-stateful</module>
+        <module>ejb-session-equality</module>
         <module>ejb-views</module>
+        <module>ejb-asynchronous</module>
         <module>ejb-timer-service</module>
         <module>ejb-security</module>
         <module>ejb-interceptors</module>
