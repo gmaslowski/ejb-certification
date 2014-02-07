@@ -1,0 +1,17 @@
+<tomee>
+    <Resource id="MyJmsResourceAdapter" type="ActiveMQResourceAdapter">
+        BrokerXmlConfig =  broker:(tcp://localhost:61616)
+        ServerUrl       =  tcp://localhost:61616
+    </Resource>
+
+    <Resource id="MyJmsConnectionFactory" type="javax.jms.ConnectionFactory">
+        ResourceAdapter = MyJmsResourceAdapter
+    </Resource>
+
+    <Container id="MyJmsMdbContainer" ctype="MESSAGE">
+        ResourceAdapter = MyJmsResourceAdapter
+    </Container>
+
+    <Resource id="CustomQueue" type="javax.jms.Queue"/>
+    <Resource id="CustomTopic" type="javax.jms.Topic"/>
+</tomee>
