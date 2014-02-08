@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gmaslowski</groupId>
+    <artifactId>ejb-ear</artifactId>
+    <name>1Z0-895 Exam: Packaging: EJB EAR</name>
+    <packaging>ear</packaging>
+
+    <properties>
+        <maven-ear-plugin.version>2.9</maven-ear-plugin.version>
+    </properties>
+
+    <parent>
+        <groupId>com.gmaslowski</groupId>
+        <artifactId>ejb-packaging</artifactId>
+        <version>0.1-SNAPSHOT</version>
+        <relativePath>../</relativePath>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.gmaslowski</groupId>
+            <artifactId>ejb-client-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gmaslowski</groupId>
+            <artifactId>ejb-core</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gmaslowski</groupId>
+            <artifactId>ejb-local-client</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+        <dependency>
+            <groupId>com.gmaslowski</groupId>
+            <artifactId>ejb-remote-client</artifactId>
+            <version>${project.version}</version>
+            <type>war</type>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.openejb.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${maven-ear-plugin.version}</version>
+                <!-- configuring the ear plugin -->
+                <configuration>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+
+                    <modules>
+                        <jarModule>
+                            <groupId>com.gmaslowski</groupId>
+                            <artifactId>ejb-client-api</artifactId>
+                        </jarModule>
+
+                        <ejbModule>
+                            <groupId>com.gmaslowski</groupId>
+                            <artifactId>ejb-core</artifactId>
+                        </ejbModule>
+
+                        <webModule>
+                            <groupId>com.gmaslowski</groupId>
+                            <artifactId>ejb-local-client</artifactId>
+                        </webModule>
+
+                        <webModule>
+                            <groupId>com.gmaslowski</groupId>
+                            <artifactId>ejb-remote-client</artifactId>
+                        </webModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
