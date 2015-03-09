@@ -49,6 +49,7 @@
         <module>ejb-timer-service</module>
         <module>ejb-security</module>
         <module>ejb-interceptors</module>
+        <module>ejb-jar</module>
         <module>ejb-packaging</module>
     </modules>
 
